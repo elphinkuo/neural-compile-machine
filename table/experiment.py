@@ -3,6 +3,8 @@ import json
 import time
 import os
 import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import re
 import random
 import cPickle as pkl
@@ -278,7 +280,7 @@ tf.app.flags.DEFINE_integer(
 
 # Testing
 tf.app.flags.DEFINE_bool(
-  'unittest', False, '.')
+  'unittest', True, '.')
 
 tf.app.flags.DEFINE_integer(
   'n_opt_step', 1, 'Number of optimization steps per training batch.')
