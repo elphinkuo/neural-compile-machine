@@ -7,7 +7,7 @@ FIXED_REPLAY_WEIGHT=1.0
 TOPK_REPLAY=nouse_top_k_replay_samples
 USE_TRAINER_PROB=nouse_trainer_prob
 TRUNCATE_AT_N=5
-N_STEPS=30000
+N_STEPS=20000
 OUTPUT=output
 case $CONFIG in
     mapo)

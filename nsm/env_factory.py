@@ -209,6 +209,9 @@ class QAProgrammingEnv(Environment):
 
     # If no valid actions are available, then stop.
 
+    if not self.valid_actions:
+      self.done = True
+      self.error = True
     # If the program is not finished yet, collect the
     # observation.
     if not self.done:
