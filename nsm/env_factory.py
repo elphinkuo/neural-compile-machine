@@ -161,6 +161,7 @@ class QAProgrammingEnv(Environment):
     # Only when the proram is finished and it doesn't have
     # extra work or we don't care, its result will be
     # scored, and the score will be used as reward. 
+    reward_compile = 1.0
     if self.done and not (self.punish_extra_work and self.interpreter.has_extra_work()):
       reward = self.score_fn(self.interpreter.result, self.answer)
     else:
@@ -190,16 +191,23 @@ class QAProgrammingEnv(Environment):
           cached_actions.append(ma)
       valid_actions = new_valid_actions
 
+   
     self.valid_actions = valid_actions
+
+    if not self.valid_actions:
+      self.done = True
+      self.error = True
+
+    if self.error = True:
+      reward_compile = 0.0
+    
+    reward = reward * reward_compile
     self.rewards.append(reward)
     ob = (tf_utils.MemoryInputTuple(
       read_ind=mapped_action, write_ind=new_var_id, valid_indices=self.valid_actions),
           [self.id_feature_dict[a] for a in valid_actions])
 
     # If no valid actions are available, then stop.
-    if not self.valid_actions:
-      self.done = True
-      self.error = True
 
     # If the program is not finished yet, collect the
     # observation.
@@ -227,6 +235,7 @@ class QAProgrammingEnv(Environment):
     self.actions = []
     self.mapped_actions = []
     self.rewards = []
+    self.error = False
     self.done = False
     valid_actions = self.de_vocab.lookup(self.interpreter.valid_tokens())
     if self.use_cache:

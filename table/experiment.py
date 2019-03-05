@@ -10,6 +10,7 @@ import functools
 import pprint
 import codecs
 import multiprocessing
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import copy
 import numpy as np

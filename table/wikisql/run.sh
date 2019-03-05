@@ -7,7 +7,7 @@ FIXED_REPLAY_WEIGHT=1.0
 TOPK_REPLAY=nouse_top_k_replay_samples
 USE_TRAINER_PROB=nouse_trainer_prob
 TRUNCATE_AT_N=5
-N_STEPS=15000
+N_STEPS=30000
 OUTPUT=output
 case $CONFIG in
     mapo)
@@ -92,7 +92,7 @@ python ../experiment.py \
        --train_gpu_id=0 \
        --eval_use_gpu \
        --eval_gpu_id=1 \
-       --max_n_mem=60 \
+       --max_n_mem=100 \
        --max_n_valid_indices=60 \
        --max_n_exp=4 \
        --eval_beam_size=5 \
