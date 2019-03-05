@@ -43,8 +43,8 @@ case $CONFIG in
         exit 1
         ;;
 esac
-#DATA_DIR="$HOME/projects/data/wikisql/"
-DATA_DIR="gs://nsmnlp/wikisql/"
+DATA_DIR="$HOME/projects/data/wikisql/"
+# DATA_DIR="gs://nsmnlp/wikisql/"
 INPUT_DIR=$DATA_DIR"processed_input/preprocess_2/"
 SPLIT_DIR=$INPUT_DIR
 python ../experiment.py \
