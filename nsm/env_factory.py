@@ -198,7 +198,7 @@ class QAProgrammingEnv(Environment):
       self.done = True
       self.error = True
 
-    if self.error = True:
+    if self.error == True:
       reward_compile = 0.0
     
     reward = reward * reward_compile
