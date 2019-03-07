@@ -199,7 +199,7 @@ class QAProgrammingEnv(Environment):
       self.error = True
 
     if self.error == True:
-      reward_compile = -1.0
+      reward_compile = -10.0
     
     reward = reward + reward_compile
     self.rewards.append(reward)
