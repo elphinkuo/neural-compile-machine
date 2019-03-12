@@ -170,6 +170,15 @@ class QAProgrammingEnv(Environment):
     if self.done and self.interpreter.result == [computer_factory.ERROR_TK]:
       self.error = True
 
+    if self.done:
+      if self.interpreter.result is None:
+        self.error = True
+        print('isNone')
+      else:
+        if len(self.interpreter.result) == 0:
+          self.error = True
+
+
     if result is None or self.done:
       new_var_id = -1
     else:
