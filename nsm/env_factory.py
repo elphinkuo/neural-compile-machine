@@ -172,10 +172,12 @@ class QAProgrammingEnv(Environment):
 
     if self.done:
       if self.interpreter.result is None:
-        self.error = True
+        # self.error = True
+        reward_compile = -10
       else:
         if len(self.interpreter.result) == 0:
-          self.error = True
+          reward_compile = -10
+
 
 
     if result is None or self.done:
@@ -207,9 +209,9 @@ class QAProgrammingEnv(Environment):
       self.error = True
 
     if self.error == True:
-      reward_compile = 0.0
+      reward_compile = -1
     
-    reward = reward * reward_compile
+    reward = reward + reward_compile
     self.rewards.append(reward)
     ob = (tf_utils.MemoryInputTuple(
       read_ind=mapped_action, write_ind=new_var_id, valid_indices=self.valid_actions),
