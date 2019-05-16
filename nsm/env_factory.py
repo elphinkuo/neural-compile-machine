@@ -171,12 +171,14 @@ class QAProgrammingEnv(Environment):
       self.error = True
 
     if self.done:
+      print(self.interpreter.result)
       if self.interpreter.result is None:
         # self.error = True
-        reward_compile = -10
+        # print('*'*50, 'Result is None')
       else:
         if len(self.interpreter.result) == 0:
-          reward_compile = -10
+          # print('*'*50, 'Result Length is 0')
+          reward_compile = 0.0
 
 
 
