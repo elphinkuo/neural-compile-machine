@@ -170,15 +170,15 @@ class QAProgrammingEnv(Environment):
     if self.done and self.interpreter.result == [computer_factory.ERROR_TK]:
       self.error = True
 
-    if self.done:
-      # print(self.interpreter.result)
-      if self.interpreter.result is not None:
-        # self.error = True
-        # print('*'*50, 'Result is None')
-
-        if len(self.interpreter.result) == 0:
-          # print('*'*50, 'Result Length is 0')
-          reward_compile = 0.0
+    # if self.done:
+    #   # print(self.interpreter.result)
+    #   if self.interpreter.result is not None:
+    #     # self.error = True
+    #     # print('*'*50, 'Result is None')
+    #
+    #     if len(self.interpreter.result) == 0:
+    #       # print('*'*50, 'Result Length is 0')
+    #       reward_compile = 0.0
 
 
 
