@@ -1,3 +1,9 @@
+Code from one of my unpublished work, Neural Compile Machine, code is about modifications on a paper, "Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision, Chen Liang, Jonathan Berant, Quoc Le, Kenneth D. Forbus, Ni Lao". 
+
+This work is partially supported by Google [TPU Research Cloud (TRC) program](https://sites.research.google/trc/), and credits from Google Cloud.
+
+
+
 # Introduction
 
 ## Neural Symbolic Machines (NSM)
